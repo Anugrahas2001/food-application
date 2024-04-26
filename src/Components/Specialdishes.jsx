@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import PopUp from "./PopUp";
 import Card from "./Card";
+import { AllMenuContext } from "./Menu";
 
-function Specialdishes(props) {
+function Specialdishes() {
   let [readmore, setReadmore] = useState(false);
   let [showPopUp, setShowPopUp] = useState(false);
   let [currentDish, setCurrentDish] = useState(" ");
+ let allMenuDishes=useContext(AllMenuContext);
+
   let maxDishes = 8;
 
   //Function to show pop-up and we are passing the function tothe child card element
@@ -19,7 +22,7 @@ function Specialdishes(props) {
   };
 
   //Displaying every images in Card
-  let Dishes = props.specialdishes.map((Dish, index) => {
+  let Dishes = allMenuDishes.map((Dish, index) => {
     if (index < maxDishes) {
       return <Card Dish={Dish} showpopupHandler={showpopupHandler} />;
     }
@@ -38,7 +41,7 @@ function Specialdishes(props) {
         <PopUp
           closeShowPopUpHandler={closeShowPopUpHandler}
           currentDish={currentDish}
-          allDishes={props.specialdishes}
+          allDishes={allMenuDishes}
         />
       )}
       <div className="specialdishes">

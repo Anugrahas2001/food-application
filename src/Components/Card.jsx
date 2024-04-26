@@ -2,7 +2,6 @@ import React from 'react'
 
 const Card = (props) => {
 
-
   return (
     <div>
       <li key={props.Dish.idMeal}>

@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import NotAvailable from "./NotAvailable";
 import Pagination from "./Pagination";
 import Card from "./Card";
 import PopUp from "./PopUp";
+import { AllMenuContext } from "./Menu";
 
 function Filtereddishes(props) {
   let [foodImg, setFoodImg] = useState([]);
@@ -11,7 +12,7 @@ function Filtereddishes(props) {
   let [itemPerPage, setItemPerPage] = useState(4);
   let [showPopup, setShowPopup] = useState(false);
   let [currentDish, setCurrentDish] = useState(" ");
-  console.log("the popup is", showPopup);
+  let allMenuDishes=useContext(AllMenuContext);
 
   let maxDish = 8;
 
@@ -50,7 +51,7 @@ function Filtereddishes(props) {
   function showCategoryImages(categoryname) {
     props.setSingleDish([]);
     setActiveDish(categoryname);
-    let displayImage = props.foodMenu
+    let displayImage = allMenuDishes
       .filter((item) => {
         return item.strCategory === categoryname;
       })
@@ -80,7 +81,7 @@ function Filtereddishes(props) {
         <PopUp
           closeShowPopUpHandler={closeShowPopUpHandler}
           currentDish={currentDish}
-          allDishes={props.foodMenu}
+          allDishes={allMenuDishes}
         />
       )}
       <div className="filteredDishes-container">

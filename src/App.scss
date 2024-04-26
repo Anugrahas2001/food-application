@@ -128,6 +128,7 @@ h6 {
     text-align: center;
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 0.5em;
   }
   img {
     width: 12em;
@@ -265,37 +266,6 @@ h6 {
   }
 }
 
-// .popup{
-//   position: relative;
-//   top: 0;
-//   left: 0;
-//   right: 0;
-//   bottom: 0;
-//   overflow-y: hidden;
-
-//   &-container {
-
-//     //  /* Add the blur effect */
-//     //   filter: blur(5px);
-//     // -webkit-filter: blur(5px);
-//     opacity: 08;
-
-//     //  /* Full height */
-
-//     //  /* Center and scale the image nicely */
-//     //  background-position: 0%;
-
-//     &-content {
-
-//       h1 {
-//         color: white;
-//       }
-//     }
-
-//   }
-
-// }
-
 .popup {
   position: fixed;
   top: 0rem;
@@ -309,24 +279,18 @@ h6 {
   align-items: center;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.664);
-  // background-image: url("https://t4.ftcdn.net/jpg/02/92/20/37/360_F_292203735_CSsyqyS6A4Z9Czd4Msf7qZEhoxjpzZl1.jpg");
-  // background-repeat: no-repeat;
-  // background-size: cover;
-  // filter: blur(1px);
-  // -webkit-filter: blur(1px);
+
 
   .popup-content {
     width: 35em;
     height: 34em;
     background-color: rgba(0, 0, 0, 0.918);
     z-index: 100;
-    // display: flex;
-    // align-items: center;
-    // justify-content: center;
+    border: 0.1em solid white;
     flex-direction: column;
     position: absolute;
-
     overflow-y: hidden;
+    border-radius: 0.2em;
     // h4 {
     //   color: white;
     // }
@@ -390,6 +354,7 @@ h6 {
       left: 3em;
       color: black;
       background: yellow;
+      text-align: center;
       width: 5rem;
       padding: 0.5em;
       border-radius: 0.7rem;
@@ -419,6 +384,26 @@ h6 {
       margin-top: 0.5em;
       padding: 0.3em;
       border-radius: 0.5em;
+    }
+  }
+}
+
+.footer{
+  width: 100%;
+  height: 10em;
+  background-color: black;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-column-gap: 12px;
+  &-content{
+    color: white;
+    margin-left: 1em;
+    h3{
+      margin-top: 1em;
+      margin-bottom: 0.7em;
+    }
+    ul{
+      list-style: none;
     }
   }
 }
