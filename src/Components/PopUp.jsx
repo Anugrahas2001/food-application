@@ -13,7 +13,15 @@ const PopUp = (props) => {
           <img key={index} src={dishname.strMealThumb} alt={dishname.strMeal}/>
           <h4 className="popup-menu-content-header">{dishname.strCategory}</h4>
         </div>
-        <h4 key={index}>{dishname.strMeal}</h4>
+        <h2 key={index}>{dishname.strMeal}</h2>
+        <ul className="ingredients">
+          <li>{dishname.strIngredient1}</li>
+          <li>{dishname.strIngredient2}</li>
+          <li>{dishname.strIngredient3}</li>
+          <li>{dishname.strIngredient4}</li>
+
+        </ul>
+        <p className="descpription">{dishname.strInstructions}</p>
       </div>
     )
   }

@@ -317,8 +317,8 @@ h6 {
 
   .popup-content {
     width: 35em;
-    height: 35em;
-    background-color: black;
+    height: 34em;
+    background-color: rgba(0, 0, 0, 0.918);
     z-index: 100;
     // display: flex;
     // align-items: center;
@@ -327,9 +327,9 @@ h6 {
     position: absolute;
 
     overflow-y: hidden;
-    h4 {
-      color: white;
-    }
+    // h4 {
+    //   color: white;
+    // }
     .popbtn {
       outline: none;
       border: none;
@@ -340,6 +340,8 @@ h6 {
       border-radius: 0.5em;
       transition: all ease-in 0.8;
       margin-left: 2em;
+      position: fixed;
+      bottom: 5em;
     }
     .popbtn:hover {
       background-color: yellow;
@@ -386,10 +388,37 @@ h6 {
       position: absolute;
       top: 11em;
       left: 3em;
+      color: black;
       background: yellow;
       width: 5rem;
       padding: 0.5em;
       border-radius: 0.7rem;
+    }
+  }
+  h2{
+    color: white;
+    margin-top: 0.7em;
+  }
+  .descpription{
+    color: white;
+    font-size: small;
+    margin-top: 0.3em;
+    overflow-y: scroll;
+    height: 9em;
+    margin-top: 0.8em;
+  }
+  .ingredients{
+    color: white;
+    display: flex;
+    li{
+      list-style: none;
+      width: auto;
+      background-color: white;
+      color: black;
+      margin-right: 1em;
+      margin-top: 0.5em;
+      padding: 0.3em;
+      border-radius: 0.5em;
     }
   }
 }
