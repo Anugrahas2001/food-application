@@ -99,7 +99,7 @@ function Specialdishes() {
           </label>
         </div>
         <div className="specialdishes-content">
-          <ul className="list flex flex-wrap">{Dishes}</ul>
+          <ul className="list  flex flex-wrap">{Dishes}</ul>
         </div>
       </div>
     </div>

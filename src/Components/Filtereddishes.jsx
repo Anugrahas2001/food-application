@@ -149,7 +149,7 @@ function Filtereddishes() {
           />
         )}
             <div className="filteredDishes-images">
-              <ul className="filteredDishes-show flex flex-wrap">
+              <ul className="filteredDishes-show show-item flex flex-wrap">
                 {singleDishs}
               </ul>
             </div>
