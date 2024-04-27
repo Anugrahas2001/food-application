@@ -22,6 +22,7 @@ const PopUp = (props) => {
 
         </ul>
         <p className="descpription">{dishname.strInstructions}</p>
+        <button className="popbtn" onClick={()=>props.addToCartHandler(dishname.strMealThumb,dishname.strMeal)}>Order Now</button>
       </div>
     )
   }
@@ -33,7 +34,7 @@ const PopUp = (props) => {
       <h4 className="close" onClick={props.closeShowPopUpHandler}>Close</h4>
         <div className="popup-content">
           {dishNames}
-          <button className="popbtn">Order Now</button>
+         
         </div>
       </div>
     </>

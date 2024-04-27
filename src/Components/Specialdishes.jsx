@@ -1,13 +1,18 @@
 import React, { useContext, useState } from "react";
 import PopUp from "./PopUp";
 import Card from "./Card";
-import { AllMenuContext } from "./Menu";
+import { AllMenuContext } from "./AllMenuContext";
+import AddToCartItems from "./AddToCartItems";
+
 
 function Specialdishes() {
   let [readmore, setReadmore] = useState(false);
   let [showPopUp, setShowPopUp] = useState(false);
   let [currentDish, setCurrentDish] = useState(" ");
+  let [addToCartItem,setAddToCartItem]=useState(" ")
  let allMenuDishes=useContext(AllMenuContext);
+ let [showCart,setShowCart]=useState(false);
+
 
   let maxDishes = 8;
 
@@ -20,6 +25,17 @@ function Specialdishes() {
   const closeShowPopUpHandler = () => {
     setShowPopUp(false);
   };
+
+   //Function for add to cart items
+   const addToCartHandler=(addToCartImg,addToCartName)=>{
+    setAddToCartItem(addToCartImg,addToCartName);
+    setShowCart(true);
+  }
+
+  const closeAddToCart=()=>{
+    console.log("close me")
+    setShowCart(false);
+  }
 
   //Displaying every images in Card
   let Dishes = allMenuDishes.map((Dish, index) => {
@@ -35,6 +51,8 @@ function Specialdishes() {
     display: "-webkit-box",
   };
 
+ 
+
   return (
     <div>
       {showPopUp && (
@@ -42,9 +60,13 @@ function Specialdishes() {
           closeShowPopUpHandler={closeShowPopUpHandler}
           currentDish={currentDish}
           allDishes={allMenuDishes}
+          addToCartHandler={addToCartHandler}
         />
       )}
       <div className="specialdishes">
+       {showCart&& < AddToCartItems addToCartItem={addToCartItem}
+       closeAddToCart={closeAddToCart}/>}
+
         <div className="specialdishes-info">
           <h1>Special Dishes</h1>
 

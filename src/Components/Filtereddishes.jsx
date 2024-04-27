@@ -1,18 +1,43 @@
-import React, { useContext, useState } from "react";
+import axios from "axios";
+import React, { useContext, useState,useEffect} from "react";
 import NotAvailable from "./NotAvailable";
 import Pagination from "./Pagination";
 import Card from "./Card";
 import PopUp from "./PopUp";
-import { AllMenuContext } from "./Menu";
+import { AllMenuContext } from "./AllMenuContext";
 
-function Filtereddishes(props) {
+function Filtereddishes() {
   let [foodImg, setFoodImg] = useState([]);
   let [activeDish, setActiveDish] = useState("Beef");
   let [currentPage, setCurrentPage] = useState(1);
   let [itemPerPage, setItemPerPage] = useState(4);
   let [showPopup, setShowPopup] = useState(false);
   let [currentDish, setCurrentDish] = useState(" ");
-  let allMenuDishes=useContext(AllMenuContext);
+  let allMenuDishes = useContext(AllMenuContext);
+
+  let [filteredDishes, setFilteredDishes] = useState([]);
+  let [singleDish, setSingleDish] = useState([]);
+
+  //Api to display categories
+  const getListOfCategories = async () => {
+    const API_URL = "https://www.themealdb.com/api/json/v1/1/categories.php";
+    axios.get(API_URL).then((categories) => {
+      setFilteredDishes(categories.data.categories);
+    });
+  };
+
+  //Fetch single Dish
+  const singleDishes = async () => {
+    const API_URL = "https://www.themealdb.com/api/json/v1/1/filter.php?c=Beef";
+    axios.get(API_URL).then((categories) => {
+      setSingleDish(categories.data.meals);
+    });
+  };
+
+  useEffect(() => {
+    getListOfCategories();
+    singleDishes();
+  }, []);
 
   let maxDish = 8;
 
@@ -36,7 +61,7 @@ function Filtereddishes(props) {
   };
 
   //Display single Dish
-  let singleDish = props.singleDish.map((dish, Index) => {
+  let singleDishs = singleDish.map((dish, Index) => {
     if (Index < maxDish) {
       return (
         <li>
@@ -62,7 +87,7 @@ function Filtereddishes(props) {
   }
 
   //Display all the categories name
-  let catogiries = props.filteredDish.map((Dish) => {
+  let catogiries = filteredDishes.map((Dish) => {
     return (
       <li
         className={`list ${Dish.strCategory === activeDish ? "active" : ""}`}
@@ -91,7 +116,7 @@ function Filtereddishes(props) {
             {catogiries}
             <div className="filteredDishes-images">
               <ul className="filteredDishes-show flex flex-wrap">
-                {singleDish}
+                {singleDishs}
               </ul>
             </div>
           </ul>
