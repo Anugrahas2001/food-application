@@ -4,17 +4,22 @@ import Card from "./Card";
 import { AllMenuContext } from "./AllMenuContext";
 import AddToCartItems from "./AddToCartItems";
 
-
 function Specialdishes() {
   let [readmore, setReadmore] = useState(false);
   let [showPopUp, setShowPopUp] = useState(false);
   let [currentDish, setCurrentDish] = useState(" ");
-  let [addToCartItem,setAddToCartItem]=useState(" ")
- let allMenuDishes=useContext(AllMenuContext);
- let [showCart,setShowCart]=useState(false);
-
+  let [addToCartItem, setAddToCartItem] = useState([{}]);
+  let [showCart, setShowCart] = useState(false);
+  let allMenuDishes = useContext(AllMenuContext);
 
   let maxDishes = 8;
+
+  //remove items from cart
+  const removeItemFromCart = (currentTitle) => {
+    setAddToCartItem((prevItems) =>
+      prevItems.filter((item) => item.title !== currentTitle)
+    );
+  };
 
   //Function to show pop-up and we are passing the function tothe child card element
   const showpopupHandler = (dishName) => {
@@ -26,16 +31,21 @@ function Specialdishes() {
     setShowPopUp(false);
   };
 
-   //Function for add to cart items
-   const addToCartHandler=(addToCartImg,addToCartName)=>{
-    setAddToCartItem(addToCartImg,addToCartName);
+  //Function for add to cart items
+  const addToCartHandler = (addToCartImg, addToCartName) => {
+    setAddToCartItem([
+      ...addToCartItem,
+      {
+        img: addToCartImg,
+        title: addToCartName,
+      },
+    ]);
     setShowCart(true);
-  }
+  };
 
-  const closeAddToCart=()=>{
-    console.log("close me")
+  const closeAddToCart = () => {
     setShowCart(false);
-  }
+  };
 
   //Displaying every images in Card
   let Dishes = allMenuDishes.map((Dish, index) => {
@@ -51,8 +61,6 @@ function Specialdishes() {
     display: "-webkit-box",
   };
 
- 
-
   return (
     <div>
       {showPopUp && (
@@ -64,8 +72,13 @@ function Specialdishes() {
         />
       )}
       <div className="specialdishes">
-       {showCart&& < AddToCartItems addToCartItem={addToCartItem}
-       closeAddToCart={closeAddToCart}/>}
+        {showCart && (
+          <AddToCartItems
+            removeItemFromCart={removeItemFromCart}
+            addToCartItem={addToCartItem}
+            closeAddToCart={closeAddToCart}
+          />
+        )}
 
         <div className="specialdishes-info">
           <h1>Special Dishes</h1>
