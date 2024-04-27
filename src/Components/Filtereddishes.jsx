@@ -5,6 +5,7 @@ import Pagination from "./Pagination";
 import Card from "./Card";
 import PopUp from "./PopUp";
 import { AllMenuContext } from "./AllMenuContext";
+import AddToCartItems from "./AddToCartItems";
 
 function Filtereddishes() {
   let [foodImg, setFoodImg] = useState([]);
@@ -13,10 +14,34 @@ function Filtereddishes() {
   let [itemPerPage, setItemPerPage] = useState(4);
   let [showPopup, setShowPopup] = useState(false);
   let [currentDish, setCurrentDish] = useState(" ");
+  let [showCart, setShowCart] = useState(false);
+  let [addToCartItem, setAddToCartItem] = useState([{}]);
   let allMenuDishes = useContext(AllMenuContext);
 
   let [filteredDishes, setFilteredDishes] = useState([]);
   let [singleDish, setSingleDish] = useState([]);
+
+
+  const removeItemFromCart = (currentTitle) => {
+    setAddToCartItem((prevItems) =>
+      prevItems.filter((item) => item.title !== currentTitle)
+    );
+  };
+
+  const addToCartHandler = (addToCartImg, addToCartName) => {
+    setAddToCartItem([
+      ...addToCartItem,
+      {
+        img: addToCartImg,
+        title: addToCartName,
+      },
+    ]);
+    setShowCart(true);
+  };
+
+  const closeAddToCart = () => {
+    setShowCart(false);
+  };
 
   //Api to display categories
   const getListOfCategories = async () => {
@@ -74,7 +99,8 @@ function Filtereddishes() {
 
   //Display all the category images
   function showCategoryImages(categoryname) {
-    props.setSingleDish([]);
+    console.log("The category name is",categoryname)
+    setSingleDish([]);
     setActiveDish(categoryname);
     let displayImage = allMenuDishes
       .filter((item) => {
@@ -107,6 +133,7 @@ function Filtereddishes() {
           closeShowPopUpHandler={closeShowPopUpHandler}
           currentDish={currentDish}
           allDishes={allMenuDishes}
+          addToCartHandler={addToCartHandler}
         />
       )}
       <div className="filteredDishes-container">
@@ -114,6 +141,13 @@ function Filtereddishes() {
         <div className="filteredDishes-dishes">
           <ul className="filteredDishes-category flex flex-wrap">
             {catogiries}
+            {showCart && (
+          <AddToCartItems
+            removeItemFromCart={removeItemFromCart}
+            addToCartItem={addToCartItem}
+            closeAddToCart={closeAddToCart}
+          />
+        )}
             <div className="filteredDishes-images">
               <ul className="filteredDishes-show flex flex-wrap">
                 {singleDishs}
