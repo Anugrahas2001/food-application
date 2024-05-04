@@ -66,7 +66,7 @@ h6 {
   }
   @media screen and (max-width:480px) and (min-width:420px){
     ul{
-      margin-right: 3rem;
+      margin-right: 3.5rem;
     }
   }
 }
@@ -209,7 +209,7 @@ li:hover{
 //   /* Media query for mobile screens */
    @media screen and (max-width: 480px) and (min-width: 420px){
     .specialdishes-info h1 {
-      margin-left: 3em; /* Adjusted margin for h1 */
+      margin-left: 2em; 
      }
 
     .list{
@@ -218,7 +218,6 @@ li:hover{
 
      .specialdishes-info p {
        width: 29em; /* Adjusted width for p */
-      //  margin-bottom: 2em;
      }
 
     img {
@@ -419,7 +418,6 @@ li:hover{
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.664);
 
-
   .popup-content {
     width: 35em;
     height: 34em;
@@ -430,9 +428,6 @@ li:hover{
     position: absolute;
     overflow-y: hidden;
     border-radius: 0.2em;
-    // h4 {
-    //   color: white;
-    // }
     .popbtn {
       outline: none;
       border: none;
@@ -449,6 +444,22 @@ li:hover{
     .popbtn:hover {
       background-color: yellow;
     }
+  }
+  @media screen and (max-width:480px) and (min-width:420px){
+    .popup-content{
+      width: 25rem;
+      margin-right: 16rem;
+      height: 32rem;
+      img{
+        margin-bottom: 2rem;
+      }
+    }
+  }
+  .popup-menu-content-header{
+    margin-top: 0.2rem;
+  }
+  .popbtn{
+    margin-bottom: 2rem;
   }
 }
 

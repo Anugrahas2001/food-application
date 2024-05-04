@@ -16,6 +16,7 @@ function Filtereddishes() {
   let [currentDish, setCurrentDish] = useState(" ");
   let [showCart, setShowCart] = useState(false);
   let [addToCartItem, setAddToCartItem] = useState([{}]);
+
   let allMenuDishes = useContext(AllMenuContext);
 
   let [filteredDishes, setFilteredDishes] = useState([]);
@@ -106,7 +107,7 @@ function Filtereddishes() {
         return item.strCategory === categoryname;
       })
       .map((Dish) => {
-        return <Card showpopupHandler={showpopupHandler} Dish={Dish} />;
+        return <Card showpopupHandler={showpopupHandler}  Dish={Dish} />;
       });
     setFoodImg(displayImage);
   }
@@ -161,6 +162,7 @@ function Filtereddishes() {
             ) : (
               <NotAvailable />
             )}
+            
             <Pagination
               totalDishes={foodImg}
               itemPerPage={itemPerPage}
@@ -173,5 +175,6 @@ function Filtereddishes() {
     </div>
   );
 }
+
 
 export default Filtereddishes;
