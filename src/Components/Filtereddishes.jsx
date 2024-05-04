@@ -99,7 +99,6 @@ function Filtereddishes() {
 
   //Display all the category images
   function showCategoryImages(categoryname) {
-    console.log("The category name is",categoryname)
     setSingleDish([]);
     setActiveDish(categoryname);
     let displayImage = allMenuDishes

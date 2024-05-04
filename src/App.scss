@@ -31,7 +31,7 @@ h6 {
   .navBar {
     width: 100%;
     height: 3em;
-    background-color: rgba(0, 0, 0, 0.753);
+    background-color:  rgba(0, 0, 0, 0.596);
     color: white;
     font-weight: bolder;
     display: flex;
@@ -41,7 +41,7 @@ h6 {
     z-index: 1000;
 
     &-category {
-      flex-basis: 40%;
+     
 
       ul {
         display: flex;
@@ -56,14 +56,23 @@ h6 {
     }
 
     &-icons {
-      flex-basis: 70%;
+      flex-basis: 64%;
       img {
-        float: right;
+        float: left;
         width: 5em;
-        margin-right: 3em;
+        margin-left: 3em;
       }
     }
   }
+  @media screen and (max-width:480px) and (min-width:420px){
+    ul{
+      margin-right: 3rem;
+    }
+  }
+}
+li:hover{
+  cursor: pointer;
+  color: cornflowerblue;
 }
 
 .Banner {
@@ -82,11 +91,14 @@ h6 {
 
     h1 {
       margin-bottom: 1.5em;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+      color:  white;
     }
     p {
       width: 23em;
       font-weight: bold;
+      color: rgba(0, 0, 0, 0.767);
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     }
   }
   @media screen and (max-width: 768px) and (min-width: 480px) {
@@ -168,6 +180,7 @@ h6 {
       top: 3;
     }
   }
+ 
    /* Media query for tablet screens */
    @media screen and (max-width: 768px) and (min-width: 480px) {
      .specialdishes-info h1 {
@@ -213,6 +226,17 @@ h6 {
      }
    }
 
+}
+.specialdishes li:hover
+{
+  transform: scale(1.4);
+  z-index: 1;
+  background-color: white;
+  width: 35rem;
+  height: 14.5rem;
+  color: black;
+  border-radius: 1rem;
+  transition-duration: 0.6s;
 }
 
 //Filtered categories
@@ -309,17 +333,6 @@ h6 {
       margin-left: 1.5em;
     }
     .filteredDishes-images{
-      margin: 0em;
-      // li{
-      //   display: flex;
-      //   flex-direction: column;
-      //   gap: 0em;
-      //   a{
-      //     img{
-      //       width: 8em;
-      //     }
-      //   }
-      // }
       .show-item{
         width: 26em;
         .card-list{
@@ -369,6 +382,10 @@ h6 {
   h3 {
     margin-top: 0.5em;
     color: cornsilk;
+  }
+  @media screen and (max-width:480px) and (min-width:420px){
+    width: 50%;
+    margin-left: 12rem;
   }
 }
 
@@ -519,7 +536,7 @@ h6 {
 .footer{
   width: 100%;
   height: 12em;
-  background-color: black;
+  background-color:  rgba(0, 0, 0, 0.596);;
   display: grid;
   grid-template-columns: repeat(4,1fr);
   grid-column-gap: 12px;
@@ -537,11 +554,8 @@ h6 {
   @media screen and (max-width:768px) and (min-width:480px) {
     .footer{
       width: 100%;
-      
       &-content{
         height: 12em;
-        background-color: black;
-
       }
       h3{
         margin-top: 0.1em;
@@ -613,4 +627,15 @@ h6 {
     font-size: medium;
     font-weight: bold;
   }
+}
+.popup-icon{
+  color: black;
+  background-color: white;
+  width: 1.5rem;
+ padding-left: 0.2rem;
+ margin-left: 27rem;
+ margin-bottom: 0.2rem;
+}
+.popup-icon:hover{
+  color: red;
 }
