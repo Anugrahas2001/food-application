@@ -20,7 +20,7 @@ const AddToCartItems = ({
         </li>
       );
     } else {
-      return null; // If img doesn't exist, don't render anything
+      return null;
     }
   });
 
