@@ -1,16 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
+import { DispatchContext } from "../context/AppProvider";
 
 const PopUp = (props) => {
   
+  const dispatch=useContext(DispatchContext);
+
+
   let dishNames=props.allDishes.filter((dish)=>{
     return dish.strMeal === props.currentDish;
   }).map((dishname,index)=>{
     return(
       <div className="popup-menu" key={index}>
-          <i
+          {/* <i
             className="fa-regular fa-circle-xmark icon popup-icon"
             onClick={props.closeShowPopUpHandler}
-          ></i>
+          ></i> */}
         <div className="popup-menu-content">
           <img key={index} src={dishname.strMealThumb} alt={dishname.strMeal}/>
           <h4 className="popup-menu-content-header">{dishname.strCategory}</h4>
@@ -24,7 +28,10 @@ const PopUp = (props) => {
 
         </ul>
         <p className="descpription">{dishname.strInstructions}</p>
-        <button className="popbtn" onClick={()=>props.addToCartHandler(dishname.strMealThumb,dishname.strMeal)}>Order Now</button>
+        <button className="popbtn" onClick={()=>{dispatch({type:"add_To_cart",payload:{
+          title:dishname.strMeal,
+          img:dishname.strMealThumb
+        }}), props.closeShowPopUpHandler()}}>Order Now</button>
       </div>
     )
   }

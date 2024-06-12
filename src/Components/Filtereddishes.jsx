@@ -90,7 +90,7 @@ function Filtereddishes() {
   let singleDishs = singleDish.map((dish, Index) => {
     if (Index < maxDish) {
       return (
-        <li>
+        <li key={Index}>
           <img src={dish.strMealThumb} alt={dish.strMeal} />
           <h5>{dish.strMeal}</h5>
         </li>
@@ -113,9 +113,9 @@ function Filtereddishes() {
   }
 
   //Display all the categories name
-  let catogiries = filteredDishes.map((Dish) => {
+  let catogiries = filteredDishes.map((Dish,index) => {
     return (
-      <li
+      <li key={index}
         className={`list ${Dish.strCategory === activeDish ? "active" : ""}`}
         onClick={() => {
           showCategoryImages(Dish.strCategory);

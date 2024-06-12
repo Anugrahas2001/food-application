@@ -6,13 +6,15 @@ import Specialdishes from "./Specialdishes";
 import Filtereddishes from "./Filtereddishes";
 import Footer from "./Footer";
 import AllMenu from "./AllMenuContext";
-import Checkout from "./Checkout";
 import AddToCartItems from "./AddToCartItems";
+import Checkout from "./Checkout";
+import {AppProvider} from "../context/AppProvider";
 
 function Menu() {
   return (
     <Router>
       <div>
+        <AppProvider>
         <Header />
         <Banner />
         <AllMenu>
@@ -23,9 +25,10 @@ function Menu() {
 
         <Routes>
           <Route path="/" element={<AllMenu />} />
-          {/* <Route path="/cart" element={<AddToCartItems />} /> */}
+          <Route path="/cart" element={<AddToCartItems />} />
           <Route path="/checkout" element={<Checkout />} />
         </Routes>
+        </AppProvider>
       </div>
     </Router>
   );

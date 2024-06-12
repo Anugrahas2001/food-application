@@ -10,9 +10,9 @@ function Header() {
       </div>
       <div className='navBar-category'>
       <ul>
-        <li><Link to="/">Home</Link></li>
-       {/* <li> <Link to="/cart">Cart</Link></li> */}
-        <li><Link to="/checkout">Checkout</Link></li>
+        <li><Link className='link' to="/">Home</Link></li>
+       <li> <Link className='link' to="/cart">Cart</Link></li>
+        <li><Link className='link' to="/checkout">Checkout</Link></li>
       </ul>
       </div>
     </div>
