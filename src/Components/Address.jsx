@@ -15,7 +15,7 @@ const Address = ({ onClose, onSave }) => {
 
   return (
     <div className="popup">
-      <div className="popup-content">
+      <div className="popup-contents">
         <span className="close" onClick={onClose}><i class="fa-regular fa-rectangle-xmark"></i></span>
         <center>
           <br />
