@@ -185,14 +185,14 @@ h6 {
     }
   }
  
-   /* Media query for tablet screens */
+   
    @media screen and (max-width: 768px) and (min-width: 480px) {
      .specialdishes-info h1 {
-       margin-left: 7em; /* Adjusted margin for h1 */
+       margin-left: 7em; 
      }
 
      .specialdishes-info p {
-      width: 80%; /* Adjusted width for p */
+      width: 80%; 
      }
      ul{
       width: 50em;
@@ -206,11 +206,9 @@ h6 {
      }
 
      img {
-       width: 10em; /* Adjusted width for image */
+       width: 10em; 
      }
    }
-
-//   /* Media query for mobile screens */
    @media screen and (max-width: 480px) and (min-width: 420px){
     .specialdishes-info h1 {
       margin-left: 2em; 
@@ -221,11 +219,11 @@ h6 {
     }
 
      .specialdishes-info p {
-       width: 29em; /* Adjusted width for p */
+       width: 29em; 
      }
 
     img {
-       width: 8em; /* Adjusted width for image */
+       width: 8em; 
      }
    }
 
@@ -455,8 +453,8 @@ h6 {
 
   @media screen and (max-width:480px) and (min-width:420px){
     .popup-content{
-      width: 28rem;
-      height: 36em;
+      width: 35em;
+    height: 34em;
       margin-right: 16rem;
       img{
         margin-bottom: 2rem;
@@ -464,10 +462,10 @@ h6 {
     }
   }
   .popup-menu-content-header{
-    margin-top: -1.8rem;
+    margin-top: 0.2rem;
   }
   .popbtn{
-    margin-bottom: 4.2rem;
+    margin-bottom: 0.2rem;
   }
 }
 
