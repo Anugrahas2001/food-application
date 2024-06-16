@@ -452,24 +452,24 @@ h6 {
       background-color: yellow;
     }
   }
-}
-  // @media screen and (max-width:480px) and (min-width:420px){
-  //   .popup-content{
-  //     width: 25rem;
-  //     margin-right: 16rem;
-  //     height: 32rem;
-  //     img{
-  //       margin-bottom: 2rem;
-  //     }
-  //   }
-  // }
-  // .popup-menu-content-header{
-  //   margin-top: 0.2rem;
-  // }
-  // .popbtn{
-  //   margin-bottom: 2rem;
-  // }
 
+  @media screen and (max-width:480px) and (min-width:420px){
+    .popup-content{
+      width: 28rem;
+      height: 36em;
+      margin-right: 16rem;
+      img{
+        margin-bottom: 2rem;
+      }
+    }
+  }
+  .popup-menu-content-header{
+    margin-top: -1.8rem;
+  }
+  .popbtn{
+    margin-bottom: 4.2rem;
+  }
+}
 
 .close {
   position: absolute;
@@ -698,7 +698,7 @@ h6 {
 
   .checkout {
     width: 100%;
-    height: 100%; // Correct height to cover the entire viewport
+    height: 100%; 
     background-color: #F2F1F0;
     position: fixed;
     top: 0;
@@ -910,8 +910,44 @@ h6 {
       color: #ffffff;
     }
   }
+    @media screen and (max-width:480px) and (min-width:420px){
 
-  .popup
+      .checkout {
+        // width: 100%;
+        // height: 100%;
+        // background-color: #F2F1F0;
+        // position: fixed;
+        // top: 0;
+        // left: 0;
+        // right: 0;
+        // bottom: 0;
+        // z-index: 99;
+        display: flex;
+        flex-direction: column;
+      }
+      .checkout-container{
+        margin-left: 10em;
+      }
+      
+      .main-address{
+        margin-top: 3em;
+        margin-bottom: 10px;
+        .address{
+          width: 27em;
+          height: 10em;
+          margin-left: 3.5em;
+          padding-left: 1em;
+          padding-top: 1em;
+          border: 2px solid black;
+          border-radius: 0.5em;
+        }
+      }
+    }
+
+  
+
+
+  .popups
   {
 
     .popup-contents{
