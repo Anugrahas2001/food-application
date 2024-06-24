@@ -9,6 +9,8 @@ import AllMenu from "./AllMenuContext";
 import AddToCartItems from "./AddToCartItems";
 import Checkout from "./Checkout";
 import {AppProvider} from "../context/AppProvider";
+import LoginPage from "./LoginPage";
+import SignUpPage from "./SignUpPage";
 
 function Menu() {
   return (
@@ -27,6 +29,8 @@ function Menu() {
           <Route path="/" element={<AllMenu />} />
           <Route path="/cart" element={<AddToCartItems />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/login" element={<LoginPage/>} />
+          <Route path="/signUp" element={<SignUpPage/>}/>
         </Routes>
         </AppProvider>
       </div>

@@ -11,10 +11,10 @@ const PopUp = (props) => {
   }).map((dishname,index)=>{
     return(
       <div className="popup-menu" key={index}>
-          {/* <i
+          <i
             className="fa-regular fa-circle-xmark icon popup-icon"
             onClick={props.closeShowPopUpHandler}
-          ></i> */}
+          ></i>
         <div className="popup-menu-content">
           <img key={index} src={dishname.strMealThumb} alt={dishname.strMeal}/>
           <h4 className="popup-menu-content-header">{dishname.strCategory}</h4>
