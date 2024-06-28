@@ -11,6 +11,7 @@ import Checkout from "./Checkout";
 import {AppProvider} from "../context/AppProvider";
 import LoginPage from "./LoginPage";
 import SignUpPage from "./SignUpPage";
+import Profile from "./Profile";
 
 function Menu() {
   return (
@@ -31,6 +32,7 @@ function Menu() {
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/login" element={<LoginPage/>} />
           <Route path="/signUp" element={<SignUpPage/>}/>
+          <Route path="/profile" element={<Profile/>} />
         </Routes>
         </AppProvider>
       </div>

@@ -24,8 +24,9 @@ function Header() {
        <li> <Link className='link' to="/cart"><i class="fa-solid fa-cart-shopping"></i></Link></li>
         <li><Link className='link' to="/checkout"><i class="fas fa-shopping-bag"></i></Link></li>
         <li> <img  src="https://cdn.pixabay.com/photo/2015/10/09/00/55/lotus-978659_640.jpg"  alt="profile" className='profile' /></li>
+        <li><Link className='link' to="/login">LogIn</Link></li>
         <li className="dropdown">
-              <Link className='link' to="/login" onClick={toggleDropdown}>LogIn <i class="fa-solid fa-chevron-down"></i></Link>
+              <Link className='link' onClick={toggleDropdown}> <i class="fa-solid fa-chevron-down"></i></Link>
               {dropdownOpen && (
                 <div className="dropdown-menu">
                   <Link className="dropdown-item" to="/profile">Profile</Link>
